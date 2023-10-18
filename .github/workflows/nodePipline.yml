@@ -2,7 +2,7 @@ name: Planets Project CI
 on:
   push:
     branches: [master]
-  pull_request:
+  pull:
     branches: [master]
 jobs:
   build:
