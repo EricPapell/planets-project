@@ -1,6 +1,8 @@
 const request = require("supertest");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 const app = require("../../../src/app");
+const { loadPlanetsData } = require("../../models/planets.module");
+const { loadPlanetsData } = require("../../models/planets.module");
 
 //BIG DESCRIBE TEST TO KEEP ALL IN ONE FUNCTION
 //AND THAT WAY WE CAN INVOKE ONCE THE MONGODB DATA TO BE TESTED
@@ -8,6 +10,7 @@ describe("Launches API", () => {
   //before calling the methods, we dothis to read MONGO DATA
   beforeAll(async () => {
     await mongoConnect();
+    await loadPlanetsData();
   });
 
   //after all we disconnect to not keep the connection forever
