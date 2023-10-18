@@ -1,9 +1,9 @@
 name: Planets Project CI
 on:
   push:
-    branches: [master]
-  pull:
-    branches: [master]
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
